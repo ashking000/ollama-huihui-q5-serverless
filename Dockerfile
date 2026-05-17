@@ -45,4 +45,9 @@ RUN chmod +x /app/start.sh && sed -i 's/\r//' /app/start.sh
 
 WORKDIR /app
 EXPOSE 11434
+
+# IMPORTANT: override the ollama base image ENTRYPOINT
+# Without this, CMD is passed as argument to 'ollama' binary
+# which causes: Error: unknown command "/app/start.sh" for "ollama"
+ENTRYPOINT ["/bin/bash"]
 CMD ["/app/start.sh"]
