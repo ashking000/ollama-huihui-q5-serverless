@@ -1,0 +1,8 @@
+.git
+.github
+*.log
+.env
+__pycache__
+.DS_Store
+run-local.sh
+test-chat.sh

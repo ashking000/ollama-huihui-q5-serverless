@@ -1,0 +1,10 @@
+{
+  "input": {
+    "mode": "chat",
+    "messages": [
+      {"role": "user", "content": "Who are you?"}
+    ],
+    "num_ctx": 4096,
+    "temperature": 0.7
+  }
+}
