@@ -9,7 +9,7 @@ ENV OLLAMA_HOST=0.0.0.0:11434
 
 RUN apt-get update -qq && \
     apt-get install -y -qq python3 python3-pip curl zstd && \
-    pip3 install --quiet huggingface_hub
+    pip3 install --quiet --break-system-packages huggingface_hub
 
 COPY download.py /build/download.py
 COPY Modelfile /build/Modelfile
@@ -35,7 +35,7 @@ ENV MODEL_NAME=huihui-q5
 
 RUN apt-get update -qq && \
     apt-get install -y -qq python3 python3-pip curl zstd && \
-    pip3 install --quiet runpod requests && \
+    pip3 install --quiet --break-system-packages runpod requests && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
 COPY --from=builder /root/.ollama /root/.ollama
